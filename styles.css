@@ -91,12 +91,14 @@ strong { font-weight: 700; }
 .brand:hover { color: var(--white); }
 
 .brand-crest {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  object-fit: cover;
+  width: auto;
+  height: 52px;
+  max-width: 56px;
+  border-radius: 0;
+  object-fit: contain;
+  object-position: center;
   flex-shrink: 0;
-  box-shadow: 0 0 0 2px var(--gold);
+  background: transparent;
 }
 
 .brand-text {
@@ -718,10 +720,13 @@ strong { font-weight: 700; }
 }
 
 .footer-brand img {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  box-shadow: 0 0 0 2px var(--gold);
+  width: auto;
+  height: 64px;
+  max-width: 72px;
+  border-radius: 0;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
 }
 
 .footer-brand strong {
