@@ -6,20 +6,28 @@ Public-facing site redesign preview for [wpbfirefighters.com](https://wpbfirefig
 
 ## Stack
 
-Static HTML/CSS (Bold Community direction). No build step.
+Static HTML/CSS (Bold Community direction) served with nginx via Docker.
 
 - `index.html` — homepage
 - `fire-assessment.html` — Fire Assessment Fee splash + public-record timeline
 - `styles.css` — shared styles
 - `assets/` — branding and photos from the current live site
+- `Dockerfile` + `nginx.conf` — container for Cloud Build / Cloud Run / similar
 
-## Local preview
+## Local preview (no Docker)
 
 ```bash
 python3 -m http.server 8080
 ```
 
 Open http://127.0.0.1:8080/
+
+## Local Docker
+
+```bash
+docker build -t wpbfirefighters .
+docker run --rm -p 8080:8080 wpbfirefighters
+```
 
 ## Notes
 
