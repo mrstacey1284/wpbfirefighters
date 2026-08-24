@@ -41,48 +41,41 @@
     </div>
   </header>
 
-  <main>
-    <section class="contact-card-page" aria-labelledby="member-name">
-      <div class="container contact-card-wrap">
-        <p class="eyebrow"><a href="/eboard/">Executive Board</a> / District Vice President</p>
-        <article class="contact-card">
-          <div class="contact-card-photo">
-            <img src="/assets/eboard/dvp-west.jpg" alt="Bryan Lee" width="600" height="600" />
+  <main class="contact-card-page">
+    <div class="container contact-card-wrap">
+      <p class="eyebrow contact-card-crumb"><a href="/eboard/">Executive Board</a></p>
+
+      <article class="wix-contact-card" aria-labelledby="member-name">
+        <div class="wix-contact-card-inner">
+          <div class="wix-contact-photo">
+            <img src="/assets/eboard/dvp-west.jpg" alt="Bryan Lee" width="360" height="360" />
           </div>
-          <div class="contact-card-info">
-            <p class="contact-card-role">District Vice President</p>
-            <h1 id="member-name">Bryan Lee</h1>
-            <p class="contact-card-org">West Palm Beach Firefighters Association · IAFF Local 727</p>
-            <ul class="contact-card-details">
-              <li>
-                <span>Email</span>
-                <a href="mailto:blee@wpb727.com">blee@wpb727.com</a>
-              </li>
-              <li>
-                <span>Phone</span>
-                <a href="tel:+15613061259">(561) 306-1259</a>
-              </li>
-            </ul>
-            <div class="contact-card-actions">
-              <a class="btn btn-primary" href="mailto:blee@wpb727.com">Email</a>
-              <a class="btn btn-ghost" href="tel:+15613061259">Call</a>
-              <a class="btn btn-ghost" href="/assets/eboard/dvp-west.vcf" download="Bryan Lee.vcf">Save Contact</a>
-            </div>
+          <div class="wix-contact-text">
+            <p class="wix-contact-first" id="member-name">BRYAN</p>
+            <p class="wix-contact-last">LEE</p>
+            <p class="wix-contact-role">District Vice President</p>
           </div>
-        </article>
-        <nav class="eboard-siblings" aria-label="Other officers">
-          <p class="eyebrow">Board</p>
-          <div class="eboard-siblings-links">
-            <a href="/eboard/president/">President</a>
-            <a href="/eboard/evp/">Executive Vice President</a>
-            <a href="/eboard/treasurer/">Secretary/Treasurer</a>
-            <a href="/eboard/dvp-north/">DVP North</a>
-            <a href="/eboard/dvp-south/">DVP South</a>
-            <a href="/eboard/dvp-west/" aria-current="page">DVP West</a>
-          </div>
-        </nav>
-      </div>
-    </section>
+        </div>
+        <div class="wix-contact-actions">
+          <a class="wix-action" href="mailto:blee@wpb727.com">
+            <span class="wix-action-icon" aria-hidden="true">✉</span>
+            <span>Email</span>
+          </a>
+          <a class="wix-action" href="tel:+15613061259">
+            <span class="wix-action-icon" aria-hidden="true">☎</span>
+            <span>Call Now</span>
+          </a>
+        </div>
+        <a class="wix-download" href="/assets/eboard/dvp-west.vcf" download="Bryan Lee.vcf">Download Contact</a>
+      </article>
+
+      <nav class="eboard-siblings" aria-label="Other officers">
+        <p class="eyebrow">Board</p>
+        <div class="eboard-siblings-links">
+          <a href="/eboard/president/">President</a><a href="/eboard/evp/">Executive Vice President</a><a href="/eboard/treasurer/">Secretary/Treasurer</a><a href="/eboard/dvp-north/">DVP North</a><a href="/eboard/dvp-south/">DVP South</a><a href="/eboard/dvp-west/" aria-current="page">DVP West</a>
+        </div>
+      </nav>
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -104,7 +97,8 @@
         <img class="footer-iaff" src="/assets/eafcb2_ba696e64cad64e05bb297ef9ab19199f~mv2.png" alt="IAFF" width="56" height="56" />
       </div>
       <div class="footer-bottom">
-        © West Palm Beach Firefighters Association L-727.
+        <div>2801 Tuxedo Ave. West Palm Beach, FL 33405</div>
+        <div>© West Palm Beach Firefighters Association L-727.</div>
       </div>
     </div>
   </footer>

@@ -41,48 +41,41 @@
     </div>
   </header>
 
-  <main>
-    <section class="contact-card-page" aria-labelledby="member-name">
-      <div class="container contact-card-wrap">
-        <p class="eyebrow"><a href="/eboard/">Executive Board</a> / Executive Vice President</p>
-        <article class="contact-card">
-          <div class="contact-card-photo">
-            <img src="/assets/eboard/evp.jpg" alt="Ryan Stacey" width="600" height="600" />
+  <main class="contact-card-page">
+    <div class="container contact-card-wrap">
+      <p class="eyebrow contact-card-crumb"><a href="/eboard/">Executive Board</a></p>
+
+      <article class="wix-contact-card" aria-labelledby="member-name">
+        <div class="wix-contact-card-inner">
+          <div class="wix-contact-photo">
+            <img src="/assets/eboard/evp.jpg" alt="Ryan Stacey" width="360" height="360" />
           </div>
-          <div class="contact-card-info">
-            <p class="contact-card-role">Executive Vice President</p>
-            <h1 id="member-name">Ryan Stacey</h1>
-            <p class="contact-card-org">West Palm Beach Firefighters Association · IAFF Local 727</p>
-            <ul class="contact-card-details">
-              <li>
-                <span>Email</span>
-                <a href="mailto:rstacey@wpb727.com">rstacey@wpb727.com</a>
-              </li>
-              <li>
-                <span>Phone</span>
-                <a href="tel:+15617792180">(561) 779-2180</a>
-              </li>
-            </ul>
-            <div class="contact-card-actions">
-              <a class="btn btn-primary" href="mailto:rstacey@wpb727.com">Email</a>
-              <a class="btn btn-ghost" href="tel:+15617792180">Call</a>
-              <a class="btn btn-ghost" href="/assets/eboard/evp.vcf" download="Ryan Stacey.vcf">Save Contact</a>
-            </div>
+          <div class="wix-contact-text">
+            <p class="wix-contact-first" id="member-name">RYAN</p>
+            <p class="wix-contact-last">STACEY</p>
+            <p class="wix-contact-role">Executive Vice President</p>
           </div>
-        </article>
-        <nav class="eboard-siblings" aria-label="Other officers">
-          <p class="eyebrow">Board</p>
-          <div class="eboard-siblings-links">
-            <a href="/eboard/president/">President</a>
-            <a href="/eboard/evp/" aria-current="page">Executive Vice President</a>
-            <a href="/eboard/treasurer/">Secretary/Treasurer</a>
-            <a href="/eboard/dvp-north/">DVP North</a>
-            <a href="/eboard/dvp-south/">DVP South</a>
-            <a href="/eboard/dvp-west/">DVP West</a>
-          </div>
-        </nav>
-      </div>
-    </section>
+        </div>
+        <div class="wix-contact-actions">
+          <a class="wix-action" href="mailto:rstacey@wpb727.com">
+            <span class="wix-action-icon" aria-hidden="true">✉</span>
+            <span>Email</span>
+          </a>
+          <a class="wix-action" href="tel:+15617792180">
+            <span class="wix-action-icon" aria-hidden="true">☎</span>
+            <span>Call Now</span>
+          </a>
+        </div>
+        <a class="wix-download" href="/assets/eboard/evp.vcf" download="Ryan Stacey.vcf">Download Contact</a>
+      </article>
+
+      <nav class="eboard-siblings" aria-label="Other officers">
+        <p class="eyebrow">Board</p>
+        <div class="eboard-siblings-links">
+          <a href="/eboard/president/">President</a><a href="/eboard/evp/" aria-current="page">Executive Vice President</a><a href="/eboard/treasurer/">Secretary/Treasurer</a><a href="/eboard/dvp-north/">DVP North</a><a href="/eboard/dvp-south/">DVP South</a><a href="/eboard/dvp-west/">DVP West</a>
+        </div>
+      </nav>
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -104,7 +97,8 @@
         <img class="footer-iaff" src="/assets/eafcb2_ba696e64cad64e05bb297ef9ab19199f~mv2.png" alt="IAFF" width="56" height="56" />
       </div>
       <div class="footer-bottom">
-        © West Palm Beach Firefighters Association L-727.
+        <div>2801 Tuxedo Ave. West Palm Beach, FL 33405</div>
+        <div>© West Palm Beach Firefighters Association L-727.</div>
       </div>
     </div>
   </footer>

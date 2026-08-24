@@ -1368,9 +1368,7 @@ strong { font-weight: 700; }
   object-position: center top;
   display: block;
 }
-.eboard-card-body {
-  padding: 1.1rem 1.2rem 1.35rem;
-}
+.eboard-card-body { padding: 1.1rem 1.2rem 1.35rem; }
 .eboard-role {
   margin: 0;
   font-family: var(--font-display);
@@ -1390,36 +1388,82 @@ strong { font-weight: 700; }
   color: rgba(255,255,255,0.65);
 }
 
+/* Live Wix-style contact card */
 .contact-card-page {
-  padding: 2.5rem 0 4rem;
-  background: #0b0b0b;
+  padding: 2.25rem 0 4rem;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(200,16,46,0.06), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(200,16,46,0.05), transparent 45%),
+    #e8e8e8;
   min-height: 70vh;
 }
-.contact-card-wrap .eyebrow a {
-  color: var(--gold);
+.contact-card-wrap {
+  max-width: 640px;
+}
+.contact-card-crumb {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+.contact-card-crumb a {
+  color: var(--black);
   text-decoration: none;
+  font-weight: 600;
 }
-.contact-card-wrap .eyebrow a:hover { text-decoration: underline; }
+.contact-card-crumb a:hover { color: var(--red); }
 
-.contact-card {
-  display: grid;
-  grid-template-columns: minmax(220px, 340px) 1fr;
-  gap: 2rem;
-  background: #161616;
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: calc(var(--radius) + 4px);
+.wix-contact-card {
+  background: var(--red);
+  color: var(--white);
+  border-radius: 18px;
+  padding: 1.75rem 1.5rem 1.35rem;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.22);
+  position: relative;
   overflow: hidden;
-  margin-top: 1rem;
 }
-@media (max-width: 720px) {
-  .contact-card { grid-template-columns: 1fr; }
+.wix-contact-card::before,
+.wix-contact-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+.wix-contact-card::before {
+  left: 0;
+  border-width: 28px 28px 0 0;
+  border-color: rgba(255,255,255,0.22) transparent transparent transparent;
+}
+.wix-contact-card::after {
+  right: 0;
+  border-width: 28px 0 0 28px;
+  border-color: rgba(255,255,255,0.22) transparent transparent transparent;
 }
 
-.contact-card-photo {
-  background: #000;
-  min-height: 320px;
+.wix-contact-card-inner {
+  display: grid;
+  grid-template-columns: 175px 1fr;
+  gap: 1.25rem;
+  align-items: center;
 }
-.contact-card-photo img {
+@media (max-width: 520px) {
+  .wix-contact-card-inner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+}
+
+.wix-contact-photo {
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid rgba(255,255,255,0.85);
+  background: #111;
+  flex-shrink: 0;
+}
+.wix-contact-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1427,82 +1471,97 @@ strong { font-weight: 700; }
   display: block;
 }
 
-.contact-card-info {
-  padding: 1.75rem 1.75rem 2rem 0;
-  color: var(--white);
-}
-@media (max-width: 720px) {
-  .contact-card-info { padding: 0 1.25rem 1.75rem; }
-}
-
-.contact-card-role {
+.wix-contact-first {
   margin: 0;
   font-family: var(--font-display);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-size: 0.85rem;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 2.6rem);
+  letter-spacing: 0.04em;
+  line-height: 1;
 }
-.contact-card-info h1 {
-  margin: 0.4rem 0 0.5rem;
+.wix-contact-last {
+  margin: 0.15rem 0 0.55rem;
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  letter-spacing: 0.02em;
+  font-weight: 600;
+  font-size: clamp(1.35rem, 3.5vw, 1.75rem);
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  opacity: 0.95;
 }
-.contact-card-org {
-  margin: 0 0 1.5rem;
-  color: rgba(255,255,255,0.65);
+.wix-contact-role {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  color: var(--gold);
 }
 
-.contact-card-details {
-  list-style: none;
-  margin: 0 0 1.5rem;
-  padding: 0;
-  display: grid;
-  gap: 0.85rem;
+.wix-contact-actions {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1.5rem 0 1.1rem;
 }
-.contact-card-details li {
-  display: grid;
-  gap: 0.15rem;
-}
-.contact-card-details span {
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.45);
-}
-.contact-card-details a {
+.wix-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   color: var(--white);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1rem;
 }
-.contact-card-details a:hover { color: var(--gold); }
+.wix-action:hover { color: var(--gold); }
+.wix-action-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+}
 
-.contact-card-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
+.wix-download {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  background: #111;
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.95rem 1rem;
+  border-radius: 6px;
+}
+.wix-download:hover {
+  background: #000;
+  color: var(--gold);
 }
 
-.eboard-siblings {
-  margin-top: 2.5rem;
-}
+.eboard-siblings { margin-top: 2.25rem; }
+.eboard-siblings .eyebrow { color: #333; }
 .eboard-siblings-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem 0.75rem;
+  gap: 0.5rem 0.65rem;
   margin-top: 0.65rem;
 }
 .eboard-siblings-links a {
-  color: rgba(255,255,255,0.75);
+  color: #222;
   text-decoration: none;
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(0,0,0,0.18);
   padding: 0.4rem 0.75rem;
   border-radius: 999px;
   font-size: 0.85rem;
+  background: rgba(255,255,255,0.7);
 }
 .eboard-siblings-links a:hover,
 .eboard-siblings-links a[aria-current="page"] {
-  border-color: var(--gold);
-  color: var(--gold);
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.site-footer .footer-bottom {
+  display: grid;
+  gap: 0.35rem;
 }
