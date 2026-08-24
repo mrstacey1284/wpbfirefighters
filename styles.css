@@ -1308,3 +1308,201 @@ strong { font-weight: 700; }
 .pillar-card img[src*="c-tech-rescue-rope"] {
   object-position: center 30%;
 }
+
+/* ----- Executive Board ----- */
+.eboard-hero {
+  background: var(--black);
+  color: var(--white);
+  padding: 3.5rem 0 2.5rem;
+}
+.eboard-hero .eyebrow { color: var(--gold); }
+.eboard-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  letter-spacing: 0.04em;
+  margin: 0.35rem 0 0.75rem;
+}
+.eboard-hero .lead {
+  max-width: 36rem;
+  color: rgba(255,255,255,0.82);
+  margin: 0;
+}
+
+.eboard-grid-section { padding: 2.75rem 0 4rem; background: #111; }
+.eboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+@media (max-width: 900px) {
+  .eboard-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .eboard-grid { grid-template-columns: 1fr; }
+}
+
+.eboard-card {
+  display: flex;
+  flex-direction: column;
+  background: #1a1a1a;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s, border-color 0.15s;
+}
+.eboard-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--gold);
+}
+.eboard-card-photo {
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #000;
+}
+.eboard-card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.eboard-card-body {
+  padding: 1.1rem 1.2rem 1.35rem;
+}
+.eboard-role {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.eboard-card-body h2 {
+  margin: 0.35rem 0 0.65rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--white);
+}
+.eboard-card-link {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.65);
+}
+
+.contact-card-page {
+  padding: 2.5rem 0 4rem;
+  background: #0b0b0b;
+  min-height: 70vh;
+}
+.contact-card-wrap .eyebrow a {
+  color: var(--gold);
+  text-decoration: none;
+}
+.contact-card-wrap .eyebrow a:hover { text-decoration: underline; }
+
+.contact-card {
+  display: grid;
+  grid-template-columns: minmax(220px, 340px) 1fr;
+  gap: 2rem;
+  background: #161616;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: calc(var(--radius) + 4px);
+  overflow: hidden;
+  margin-top: 1rem;
+}
+@media (max-width: 720px) {
+  .contact-card { grid-template-columns: 1fr; }
+}
+
+.contact-card-photo {
+  background: #000;
+  min-height: 320px;
+}
+.contact-card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.contact-card-info {
+  padding: 1.75rem 1.75rem 2rem 0;
+  color: var(--white);
+}
+@media (max-width: 720px) {
+  .contact-card-info { padding: 0 1.25rem 1.75rem; }
+}
+
+.contact-card-role {
+  margin: 0;
+  font-family: var(--font-display);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-size: 0.85rem;
+}
+.contact-card-info h1 {
+  margin: 0.4rem 0 0.5rem;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  letter-spacing: 0.02em;
+}
+.contact-card-org {
+  margin: 0 0 1.5rem;
+  color: rgba(255,255,255,0.65);
+}
+
+.contact-card-details {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+.contact-card-details li {
+  display: grid;
+  gap: 0.15rem;
+}
+.contact-card-details span {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+}
+.contact-card-details a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+}
+.contact-card-details a:hover { color: var(--gold); }
+
+.contact-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.eboard-siblings {
+  margin-top: 2.5rem;
+}
+.eboard-siblings-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  margin-top: 0.65rem;
+}
+.eboard-siblings-links a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+.eboard-siblings-links a:hover,
+.eboard-siblings-links a[aria-current="page"] {
+  border-color: var(--gold);
+  color: var(--gold);
+}
