@@ -11,109 +11,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
 </head>
-<body>
-  <a class="draft-banner draft-banner--cta" href="/index.html#contact">TELL CITY ADMINISTRATION: SUPPORT OUR FIREFIGHTERS — Contact Officials →</a>
-
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/index.html" aria-label="West Palm Beach Firefighters Local 727 home">
-        <img
-          src="/assets/989ca4_a846d3e80aa44da285b6d05f4863a6a9~mv2.png"
-          alt=""
-          width="56"
-          height="56"
-        />
-        <span class="brand-text">
-          <strong>WPB FIREFIGHTERS</strong>
-          <em>IAFF Local 727</em>
-        </span>
-      </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-      <nav id="site-nav" class="nav" aria-label="Primary">
-        <a href="/index.html">Home</a>
-        <a href="/history.html">History</a>
-        <a href="/eboard/" aria-current="page">Executive Board</a>
-        <a href="/fire-assessment.html">Fire Assessment</a>
-        <a href="/index.html#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="contact-card-page">
-    <div class="container contact-card-wrap">
-      <p class="eyebrow contact-card-crumb"><a href="/eboard/">Executive Board</a></p>
-
-      <article class="wix-contact-card" aria-labelledby="member-name">
-        <div class="wix-contact-card-inner">
-          <div class="wix-contact-photo">
-            <img src="/assets/eboard/dvp-south.jpg" alt="Bobby Bennett" width="360" height="360" />
-          </div>
-          <div class="wix-contact-text">
-            <p class="wix-contact-first" id="member-name">BOBBY</p>
-            <p class="wix-contact-last">BENNETT</p>
-            <p class="wix-contact-role">District Vice President</p>
-          </div>
+<body class="contact-card-only">
+  <main class="contact-card-page contact-card-page--solo">
+    <article class="wix-contact-card" aria-labelledby="member-name">
+      <div class="wix-contact-card-inner">
+        <div class="wix-contact-photo">
+          <img src="/assets/eboard/dvp-south.jpg" alt="Bobby Bennett" width="360" height="360" />
         </div>
-        <div class="wix-contact-actions">
-          <a class="wix-action" href="mailto:bbennett@wpb727.com">
-            <span class="wix-action-icon" aria-hidden="true">✉</span>
-            <span>Email</span>
-          </a>
-          <a class="wix-action" href="tel:+15616449031">
-            <span class="wix-action-icon" aria-hidden="true">☎</span>
-            <span>Call Now</span>
-          </a>
+        <div class="wix-contact-text">
+          <p class="wix-contact-first" id="member-name">BOBBY</p>
+          <p class="wix-contact-last">BENNETT</p>
+          <p class="wix-contact-role">District Vice President</p>
         </div>
-        <a class="wix-download" href="/assets/eboard/dvp-south.vcf" download="Bobby Bennett.vcf">Download Contact</a>
-      </article>
-
-      <nav class="eboard-siblings" aria-label="Other officers">
-        <p class="eyebrow">Board</p>
-        <div class="eboard-siblings-links">
-          <a href="/eboard/president/">President</a><a href="/eboard/evp/">Executive Vice President</a><a href="/eboard/treasurer/">Secretary/Treasurer</a><a href="/eboard/dvp-north/">DVP North</a><a href="/eboard/dvp-south/" aria-current="page">DVP South</a><a href="/eboard/dvp-west/">DVP West</a>
-        </div>
-      </nav>
-    </div>
+      </div>
+      <div class="wix-contact-actions">
+        <a class="wix-action" href="mailto:bbennett@wpb727.com">
+          <span class="wix-action-icon" aria-hidden="true">✉</span>
+          <span>Email</span>
+        </a>
+        <a class="wix-action" href="tel:+15616449031">
+          <span class="wix-action-icon" aria-hidden="true">☎</span>
+          <span>Call Now</span>
+        </a>
+      </div>
+      <a class="wix-download" href="/assets/eboard/dvp-south.vcf" download="Bobby Bennett.vcf">Download Contact</a>
+    </article>
   </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <img src="/assets/989ca4_a846d3e80aa44da285b6d05f4863a6a9~mv2.png" alt="" width="64" height="64" />
-          <div>
-            <strong>West Palm Beach Firefighters</strong>
-            <span>IAFF Local 727</span>
-          </div>
-        </div>
-        <nav class="footer-links" aria-label="Footer">
-          <a href="/history.html">History</a>
-          <a href="/eboard/">Executive Board</a>
-          <a href="/fire-assessment.html">Fire Assessment</a>
-          <a href="/index.html#contact">Contact</a>
-        </nav>
-        <img class="footer-iaff" src="/assets/eafcb2_ba696e64cad64e05bb297ef9ab19199f~mv2.png" alt="IAFF" width="56" height="56" />
-      </div>
-      <div class="footer-bottom">
-        <div>2801 Tuxedo Ave. West Palm Beach, FL 33405</div>
-        <div>© West Palm Beach Firefighters Association L-727.</div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    (function () {
-      var toggle = document.querySelector('.nav-toggle');
-      var nav = document.getElementById('site-nav');
-      if (!toggle || !nav) return;
-      toggle.addEventListener('click', function () {
-        var open = nav.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-      });
-    })();
-  </script>
 </body>
 </html>

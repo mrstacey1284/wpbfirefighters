@@ -1565,3 +1565,57 @@ strong { font-weight: 700; }
   display: grid;
   gap: 0.35rem;
 }
+
+
+/* Solo contact card pages (no site chrome) */
+body.contact-card-only {
+  margin: 0;
+  min-height: 100vh;
+}
+.contact-card-page--solo {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+.contact-card-page--solo .wix-contact-card {
+  width: min(100%, 560px);
+  margin: 0 auto;
+}
+
+.eboard-listing-solo {
+  min-height: 100vh;
+  padding: 2.5rem 0 3rem;
+  background: #e8e8e8;
+  box-sizing: border-box;
+}
+.eboard-listing-brand {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.eboard-listing-brand img {
+  display: block;
+  margin: 0 auto 0.75rem;
+}
+.eboard-listing-brand h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  letter-spacing: 0.06em;
+  color: var(--black);
+}
+.eboard-listing-solo .eboard-grid {
+  /* cards on light bg */
+}
+.eboard-listing-solo .eboard-card {
+  background: var(--red);
+  border-color: transparent;
+}
+.eboard-listing-solo .eboard-card-body h2 { color: var(--white); }
+.eboard-listing-solo .eboard-card-photo {
+  aspect-ratio: 1;
+}
+.eboard-listing-solo .eboard-card-photo img {
+  object-position: center top;
+}
