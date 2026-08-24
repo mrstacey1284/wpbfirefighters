@@ -265,17 +265,17 @@
           </div>
         </div>
 
-        <form class="contact-form" action="#" method="post" onsubmit="event.preventDefault(); this.querySelector('.form-thanks').hidden=false;">
+        <form class="contact-form" id="contact-form" action="#" method="get">
           <div class="field">
             <label for="district">Choose your District</label>
             <select id="district" name="district" required>
               <option value="" selected disabled>Select a district…</option>
-              <option value="1">District 1</option>
-              <option value="2">District 2</option>
-              <option value="3">District 3</option>
-              <option value="4">District 4</option>
-              <option value="5">District 5</option>
-              <option value="at-large">At-Large / Mayor</option>
+              <option value="1">District 1 — Cathleen Ward</option>
+              <option value="2">District 2 — Shalonda Warren</option>
+              <option value="3">District 3 — Christy Fox</option>
+              <option value="4">District 4 — Joseph Peduzzi</option>
+              <option value="5">District 5 — Stephen Sylvester</option>
+              <option value="mayor">Mayor — Keith A. James</option>
             </select>
           </div>
           <div class="form-row">
@@ -296,10 +296,11 @@
             <button class="btn btn-primary" type="submit">Contact Officials</button>
           </div>
           <p class="privacy-note">
+            Opens your email app addressed to your commissioner, with a copy BCC’d to Local&nbsp;727.
             All information collected is never sold or used for any purpose other than what is indicated above.
           </p>
           <p class="form-thanks" hidden>
-            Thanks for standing with us! (Preview form — not submitted.)
+            Opening your email app…
           </p>
         </form>
       </div>
@@ -344,11 +345,55 @@
     (function () {
       var toggle = document.querySelector('.nav-toggle');
       var nav = document.getElementById('site-nav');
-      if (!toggle || !nav) return;
-      toggle.addEventListener('click', function () {
-        var open = nav.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      if (toggle && nav) {
+        toggle.addEventListener('click', function () {
+          var open = nav.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        });
+      }
+
+      /* Official public emails from wpb.org City Commission pages */
+      var OFFICIALS = {
+        '1': { email: 'cward@wpb.org', label: 'District 1 Commissioner Cathleen Ward' },
+        '2': { email: 'swarren@wpb.org', label: 'District 2 Commissioner Shalonda Warren' },
+        '3': { email: 'cfox@wpb.org', label: 'District 3 Commissioner Christy Fox' },
+        '4': { email: 'jpeduzzi@wpb.org', label: 'District 4 Commissioner Joseph Peduzzi' },
+        '5': { email: 'ssylvester@wpb.org', label: 'District 5 Commissioner Stephen Sylvester' },
+        'mayor': { email: 'KJames@wpb.org', label: 'Mayor Keith A. James' }
+      };
+      var BCC = 'rstacey@wpb727.com';
+
+      var form = document.getElementById('contact-form');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var district = document.getElementById('district').value;
+        var name = (document.getElementById('name').value || '').trim();
+        var email = (document.getElementById('email').value || '').trim();
+        var message = (document.getElementById('message').value || '').trim();
+        var official = OFFICIALS[district];
+        if (!official || !name || !email || !message) return;
+
+        var subject = 'Fire Assessment Fee — message from a West Palm Beach resident';
+        var body =
+          'Dear ' + official.label + ',\n\n' +
+          message +
+          '\n\n' +
+          '—\n' +
+          name + '\n' +
+          email + '\n' +
+          'District selection: ' + official.label + '\n';
+
+        var href =
+          'mailto:' + encodeURIComponent(official.email) +
+          '?bcc=' + encodeURIComponent(BCC) +
+          '&subject=' + encodeURIComponent(subject) +
+          '&body=' + encodeURIComponent(body);
+
+        var thanks = form.querySelector('.form-thanks');
+        if (thanks) thanks.hidden = false;
+        window.location.href = href;
       });
     })();
   </script>
