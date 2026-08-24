@@ -1580,7 +1580,7 @@ body.contact-card-only::before {
   background-image: url("/assets/eboard/iaff-bg-tile.png");
   background-repeat: repeat;
   background-size: 280px 280px;
-  opacity: 0.5;
+  opacity: 0.25;
 }
 body.contact-card-only > * {
   position: relative;
@@ -1604,10 +1604,9 @@ body.contact-card-only > * {
 }
 .contact-card-logo {
   display: block;
-  width: min(280px, 70vw);
+  width: min(160px, 42vw);
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.12));
 }
 .contact-card-page--solo .wix-contact-card {
   width: 100%;
