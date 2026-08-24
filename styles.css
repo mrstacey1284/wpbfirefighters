@@ -1391,10 +1391,7 @@ strong { font-weight: 700; }
 /* Live Wix-style contact card */
 .contact-card-page {
   padding: 2.25rem 0 4rem;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(200,16,46,0.06), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(200,16,46,0.05), transparent 45%),
-    #e8e8e8;
+  background: transparent;
   min-height: 70vh;
 }
 .contact-card-wrap {
@@ -1571,6 +1568,10 @@ strong { font-weight: 700; }
 body.contact-card-only {
   margin: 0;
   min-height: 100vh;
+  background-color: #e6e6e6;
+  background-image: url("/assets/eboard/iaff-watermark.png");
+  background-repeat: repeat;
+  background-size: 220px 220px;
 }
 .contact-card-page--solo {
   min-height: 100vh;
@@ -1579,16 +1580,31 @@ body.contact-card-only {
   justify-content: center;
   padding: 1.5rem;
   box-sizing: border-box;
+  background: transparent;
+}
+.contact-card-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.15rem;
+  width: min(100%, 560px);
+}
+.contact-card-logo {
+  display: block;
+  width: 88px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.12));
 }
 .contact-card-page--solo .wix-contact-card {
-  width: min(100%, 560px);
+  width: 100%;
   margin: 0 auto;
 }
 
 .eboard-listing-solo {
   min-height: 100vh;
   padding: 2.5rem 0 3rem;
-  background: #e8e8e8;
+  background: transparent;
   box-sizing: border-box;
 }
 .eboard-listing-brand {
