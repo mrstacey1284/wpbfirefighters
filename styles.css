@@ -1268,3 +1268,32 @@ strong { font-weight: 700; }
   .timeline-item { padding-left: 2.4rem; padding-bottom: 2rem; }
   .faf-hero { min-height: 60vh; padding: 3rem 0 3.25rem; }
 }
+
+
+/* Fire Assessment hero — ops action crop (distinct from homepage Station 6) */
+.faf-hero-bg--ops img {
+  object-fit: cover;
+  object-position: center 40%;
+  filter: contrast(1.05) saturate(1.05);
+}
+.faf-hero:has(.faf-hero-bg--ops) .faf-hero-overlay {
+  background:
+    linear-gradient(105deg, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.55) 48%, rgba(139, 0, 0, 0.45) 100%),
+    linear-gradient(to top, rgba(0, 0, 0, 0.65), transparent 55%);
+}
+
+/* History heritage hero */
+.faf-hero-bg--heritage img {
+  object-fit: cover;
+  object-position: center 55%;
+  filter: grayscale(0.15) contrast(1.08);
+}
+.faf-hero:has(.faf-hero-bg--heritage) .faf-hero-overlay {
+  background:
+    linear-gradient(100deg, rgba(0, 0, 0, 0.82) 0%, rgba(20, 16, 10, 0.55) 55%, rgba(0, 0, 0, 0.35) 100%);
+}
+
+/* Special Ops pillar — square rope shot */
+.pillar-card img[src*="c-tech-rescue-rope"] {
+  object-position: center 30%;
+}
