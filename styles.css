@@ -1334,7 +1334,7 @@ strong { font-weight: 700; }
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
 }
-@media (max-width: 900px) {
+@media (max-width: 980px) {
   .eboard-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 560px) {
@@ -1656,6 +1656,21 @@ body.contact-card-only > * {
     letter-spacing: 0.04em;
   }
   .brand-name { font-size: 0.9rem; }
+
+  /* Readable column on tablets only. Phone (≤720) and desktop (>980)
+     keep the full container width. Header stays wide so the nav still fits.
+     Full-bleed action/community photos stay edge to edge; their copy columns match. */
+  main .container:not(.faf-action-grid),
+  .site-footer .container {
+    width: min(100% - 2.5rem, 40rem);
+    margin-inline: auto;
+  }
+
+  .community-copy,
+  .faf-action-copy {
+    width: min(100% - 2.5rem, 40rem);
+    justify-self: center;
+  }
 }
 
 /* =========================================================
