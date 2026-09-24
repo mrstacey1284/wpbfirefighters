@@ -1732,8 +1732,11 @@ body.contact-card-only > * {
 
 .a3-hero {
   position: relative;
+  display: flex;
+  align-items: center;
+  min-height: min(82vh, 760px);
   overflow: hidden;
-  padding: 2.5rem 0 2.75rem;
+  padding: 4.25rem 0 4.5rem;
   background: var(--black);
 }
 
@@ -1746,8 +1749,7 @@ body.contact-card-only > * {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 28%;
-  filter: grayscale(0.35) contrast(1.08);
+  object-position: center 42%;
 }
 
 .a3-hero-bg::after {
@@ -1755,13 +1757,23 @@ body.contact-card-only > * {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(11, 11, 11, 0.9) 0%, rgba(11, 11, 11, 0.86) 48%, rgba(11, 11, 11, 0.94) 100%),
-    linear-gradient(100deg, rgba(11, 11, 11, 0.55) 0%, rgba(139, 0, 0, 0.42) 100%);
+    linear-gradient(180deg, rgba(11, 11, 11, 0.28) 0%, rgba(11, 11, 11, 0.42) 42%, rgba(11, 11, 11, 0.62) 100%),
+    radial-gradient(ellipse at center, rgba(11, 11, 11, 0.48) 0%, rgba(11, 11, 11, 0.18) 58%, rgba(11, 11, 11, 0.08) 100%),
+    linear-gradient(105deg, rgba(11, 11, 11, 0.2) 0%, rgba(200, 16, 46, 0.16) 100%);
 }
 
 .a3-hero-inner {
   position: relative;
   z-index: 1;
+  text-align: center;
+}
+
+.a3-hero .eyebrow {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.75rem;
+  background: var(--red);
+  color: var(--white);
 }
 
 .a3-hero h1 {
@@ -1771,6 +1783,7 @@ body.contact-card-only > * {
   text-transform: uppercase;
   line-height: 0.86;
   letter-spacing: 0.01em;
+  text-shadow: 0 2px 22px rgba(0, 0, 0, 0.65);
 }
 
 .a3-hero-vote {
@@ -1801,18 +1814,20 @@ body.contact-card-only > * {
 
 .a3-support {
   max-width: 38rem;
-  margin: 0 0 0.8rem;
+  margin: 0 auto 0.8rem;
   color: var(--white);
   font-size: clamp(1.12rem, 2.2vw, 1.4rem);
   font-weight: 600;
   line-height: 1.35;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.7);
 }
 
 .a3-hero-note {
   max-width: 40rem;
-  margin: 0 0 1.4rem;
-  color: var(--muted);
+  margin: 0 auto 1.4rem;
+  color: rgba(255, 255, 255, 0.94);
   font-size: 1.02rem;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75);
 }
 
 .a3-vote-badge {
@@ -1861,9 +1876,11 @@ body.contact-card-only > * {
 }
 
 .a3-manifesto-inner {
-  max-width: 46rem;
-  border-left: 6px solid var(--red);
-  padding-left: 1.15rem;
+  max-width: 42rem;
+  margin-inline: auto;
+  border-top: 6px solid var(--red);
+  padding-top: 1.15rem;
+  text-align: center;
 }
 
 .a3-manifesto h2,
@@ -1888,6 +1905,7 @@ body.contact-card-only > * {
   background: var(--gold);
   color: var(--black);
   padding: 2.6rem 0 2.4rem;
+  text-align: center;
 }
 
 .a3-statement-banner .eyebrow {
@@ -1920,7 +1938,7 @@ body.contact-card-only > * {
 .a3-statement-caption,
 .a3-statement-note {
   max-width: 40rem;
-  margin: 0.9rem 0 0;
+  margin: 0.9rem auto 0;
   color: var(--black);
   font-size: 1.08rem;
   font-weight: 600;
@@ -1933,6 +1951,7 @@ body.contact-card-only > * {
 }
 
 .a3-ledger {
+  max-width: 52rem;
   padding: 0.4rem 0 2.75rem;
 }
 
@@ -1971,10 +1990,11 @@ body.contact-card-only > * {
 
 .a3-attrib {
   max-width: 46rem;
-  margin: 1.15rem 0 0;
+  margin: 1.15rem auto 0;
   color: #8d8d8d;
   font-size: 0.88rem;
   line-height: 1.5;
+  text-align: center;
 }
 
 .a3-attrib a,
@@ -1991,8 +2011,9 @@ body.contact-card-only > * {
 }
 
 .a3-block-head {
-  max-width: 42rem;
-  margin-bottom: 1.5rem;
+  max-width: 40rem;
+  margin: 0 auto 1.5rem;
+  text-align: center;
 }
 
 .a3-block-head .lead,
@@ -2009,7 +2030,8 @@ body.contact-card-only > * {
 
 .a3-side {
   min-width: 0;
-  padding: 1.6rem 1.35rem 1.75rem;
+  padding: 1.85rem 1.5rem 2rem;
+  text-align: center;
 }
 
 .a3-side--protected {
@@ -2057,7 +2079,8 @@ body.contact-card-only > * {
 }
 
 .a3-prose {
-  max-width: 44rem;
+  max-width: 42rem;
+  margin-inline: auto;
 }
 
 .a3-prose p {
@@ -2082,8 +2105,9 @@ body.contact-card-only > * {
 
 .a3-vs-side {
   min-width: 0;
-  padding: 1.35rem 1.2rem 1.5rem;
+  padding: 1.5rem 1.25rem 1.6rem;
   background: var(--black);
+  text-align: center;
 }
 
 .a3-vs-side--loss {
@@ -2138,6 +2162,7 @@ body.contact-card-only > * {
 
 .a3-cta-row {
   margin: 1.5rem 0 0;
+  text-align: center;
 }
 
 .a3-changes {
@@ -2148,8 +2173,8 @@ body.contact-card-only > * {
 
 .a3-changes-list {
   list-style: none;
-  max-width: 46rem;
-  margin: 0;
+  max-width: 42rem;
+  margin: 0 auto;
   padding: 0;
   counter-reset: a3change;
 }
@@ -2215,7 +2240,8 @@ body.contact-card-only > * {
 }
 
 .a3-faq-list {
-  max-width: 46rem;
+  max-width: 44rem;
+  margin-inline: auto;
   border-top: 1px solid var(--border);
 }
 
@@ -2267,9 +2293,14 @@ body.contact-card-only > * {
 
 .a3-faq-item p {
   margin: 0;
-  padding: 0 0 1.2rem;
+  padding: 0 0 1rem;
   color: var(--muted);
-  font-size: 1.12rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.a3-faq-item p:last-child {
+  padding-bottom: 1.25rem;
 }
 
 .a3-faq-item strong {
@@ -2291,7 +2322,7 @@ body.contact-card-only > * {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: 2rem 2.5rem;
-  align-items: start;
+  align-items: center;
 }
 
 .a3-sign-copy h2 {
@@ -2416,13 +2447,15 @@ body.contact-card-only > * {
   background: #050505;
   padding: 3.1rem 0 3.4rem;
   border-top: 1px solid var(--border);
+  text-align: center;
 }
 
 .a3-sources-list {
   max-width: 46rem;
-  margin: 1.35rem 0 0;
+  margin: 1.35rem auto 0;
   padding: 0;
   list-style: none;
+  text-align: left;
 }
 
 .a3-sources-list a {
@@ -2450,11 +2483,20 @@ body.contact-card-only > * {
   .a3-sign-grid {
     grid-template-columns: 1fr;
   }
+
+  .a3-sign-copy {
+    text-align: center;
+  }
+
+  .a3-sign-copy p:last-child {
+    margin-inline: auto;
+  }
 }
 
 @media (max-width: 720px) {
   .a3-hero {
-    padding: 2rem 0 2.25rem;
+    min-height: 70vh;
+    padding: 3rem 0 3.25rem;
   }
 
   .a3-contrast-grid,
