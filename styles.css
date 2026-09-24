@@ -2280,6 +2280,82 @@ body.contact-card-only > * {
   text-transform: uppercase;
 }
 
+.a3-sign {
+  background: var(--black);
+  padding: 3.25rem 0 3.5rem;
+  border-top: 8px solid var(--gold);
+  scroll-margin-top: 8.5rem;
+}
+
+.a3-sign-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 2rem 2.5rem;
+  align-items: start;
+}
+
+.a3-sign-copy h2 {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 4.5vw, 3.3rem);
+  letter-spacing: 0.02em;
+  line-height: 0.98;
+  text-transform: uppercase;
+}
+
+.a3-sign-copy p:last-child {
+  max-width: 28rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 1.08rem;
+}
+
+.a3-sign-form {
+  background: var(--black-2);
+  border: 1px solid var(--border);
+  border-top: 6px solid var(--red);
+  padding: 1.35rem 1.25rem 1.25rem;
+}
+
+.a3-sign-form .field:last-of-type {
+  margin-bottom: 0.35rem;
+}
+
+.a3-sign-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr);
+  gap: 1rem;
+}
+
+.a3-sign-row .field label span {
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+
+.a3-sign-actions {
+  margin-top: 0.35rem;
+}
+
+.a3-sign-form .a3-vote-badge {
+  width: 100%;
+  cursor: pointer;
+}
+
+.a3-sign-note {
+  margin: 0.9rem 0 0;
+  color: #8d8d8d;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.a3-sign-thanks {
+  margin: 0.75rem 0 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+
 .a3-close {
   position: relative;
   display: flex;
@@ -2370,6 +2446,12 @@ body.contact-card-only > * {
   color: var(--gold);
 }
 
+@media (max-width: 980px) {
+  .a3-sign-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 720px) {
   .a3-hero {
     padding: 2rem 0 2.25rem;
@@ -2382,6 +2464,11 @@ body.contact-card-only > * {
 
   .a3-vs-mark {
     padding: 0.45rem 0.75rem;
+  }
+
+  .a3-sign-grid,
+  .a3-sign-row {
+    grid-template-columns: 1fr;
   }
 
   .a3-close {

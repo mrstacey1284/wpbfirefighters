@@ -294,6 +294,46 @@
       </div>
     </section>
 
+    <section class="a3-sign" id="yard-sign" aria-labelledby="a3-sign-heading">
+      <div class="container a3-sign-grid">
+        <div class="a3-sign-copy">
+          <p class="eyebrow">Yard signs</p>
+          <h2 id="a3-sign-heading">Request a Vote No yard sign</h2>
+          <p>
+            Put a Vote No sign where your neighbors will see it. Firefighters will follow up
+            with the name and address you send.
+          </p>
+        </div>
+        <form class="a3-sign-form" id="a3-sign-form" action="#" method="post">
+          <div class="field">
+            <label for="a3-sign-name">Name</label>
+            <input id="a3-sign-name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="a3-sign-street">Street address</label>
+            <input id="a3-sign-street" name="street" type="text" autocomplete="street-address" required />
+          </div>
+          <div class="a3-sign-row">
+            <div class="field">
+              <label for="a3-sign-city">City <span>(optional)</span></label>
+              <input id="a3-sign-city" name="city" type="text" autocomplete="address-level2" />
+            </div>
+            <div class="field">
+              <label for="a3-sign-zip">ZIP <span>(optional)</span></label>
+              <input id="a3-sign-zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="10" />
+            </div>
+          </div>
+          <div class="a3-sign-actions">
+            <button class="a3-vote-badge" type="submit">Request a Vote No yard sign</button>
+          </div>
+          <p class="a3-sign-note">
+            Opens your email app with this yard sign request. Your name and address are used only for that follow-up.
+          </p>
+          <p class="a3-sign-thanks" hidden>Opening your email app…</p>
+        </form>
+      </div>
+    </section>
+
     <section class="a3-sources" id="sources" aria-labelledby="a3-sources-heading">
       <div class="container">
         <p class="eyebrow">Sources</p>
@@ -370,12 +410,48 @@
       }
 
       var sticky = document.querySelector('.a3-sticky');
-      var close = document.getElementById('vote-no');
-      if (sticky && close && 'IntersectionObserver' in window) {
+      var stickyWatch = [
+        document.getElementById('vote-no'),
+        document.getElementById('yard-sign')
+      ].filter(Boolean);
+      if (sticky && stickyWatch.length && 'IntersectionObserver' in window) {
+        var stickyVisible = new Set();
         var observer = new IntersectionObserver(function (entries) {
-          sticky.classList.toggle('a3-sticky--hidden', entries[0].isIntersecting);
-        }, { threshold: 0.45 });
-        observer.observe(close);
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) stickyVisible.add(entry.target);
+            else stickyVisible.delete(entry.target);
+          });
+          sticky.classList.toggle('a3-sticky--hidden', stickyVisible.size > 0);
+        }, { threshold: 0.35 });
+        stickyWatch.forEach(function (section) { observer.observe(section); });
+      }
+
+      var signForm = document.getElementById('a3-sign-form');
+      if (signForm) {
+        signForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var name = (document.getElementById('a3-sign-name').value || '').trim();
+          var street = (document.getElementById('a3-sign-street').value || '').trim();
+          var city = (document.getElementById('a3-sign-city').value || '').trim();
+          var zip = (document.getElementById('a3-sign-zip').value || '').trim();
+          if (!name || !street) return;
+
+          var subject = 'Yard sign request: Amendment 3';
+          var body = 'Yard sign request for Vote No on Amendment 3\n\n' +
+            'Name: ' + name + '\n' +
+            'Street address: ' + street + '\n';
+          if (city) body += 'City: ' + city + '\n';
+          if (zip) body += 'ZIP: ' + zip + '\n';
+
+          var href =
+            'mailto:' + encodeURIComponent('rstacey@wpb727.com') +
+            '?subject=' + encodeURIComponent(subject) +
+            '&body=' + encodeURIComponent(body);
+
+          var thanks = signForm.querySelector('.a3-sign-thanks');
+          if (thanks) thanks.hidden = false;
+          window.location.href = href;
+        });
       }
     })();
   </script>
