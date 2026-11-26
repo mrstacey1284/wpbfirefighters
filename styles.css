@@ -76,7 +76,7 @@ strong { font-weight: 700; }
 /* ----- Header ----- */
 .site-header {
   position: sticky;
-  top: var(--banner-h);
+  top: 0;
   z-index: 900;
   background: rgba(11, 11, 11, 0.96);
   border-bottom: 1px solid var(--border);
